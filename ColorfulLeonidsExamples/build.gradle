@@ -1,0 +1,30 @@
+apply plugin: 'com.android.application'
+
+android {
+    signingConfigs {
+        config {
+        }
+    }
+    compileSdkVersion 27
+    buildToolsVersion "27.0.2"
+    defaultConfig {
+        applicationId 'com.github.cleonids.examples'
+        minSdkVersion 14
+        targetSdkVersion 27
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
+        }
+    }
+    productFlavors {
+    }
+}
+
+dependencies {
+
+    implementation project(':ColorfulLeonidsLib')
+    //    compile 'com.github.cleonids:ColorfulLeonidsLib:1.3.3'
+//    implementation files('libs/ColorfulLeonidsLib-1.3.3.jar')
+}

@@ -1,2 +1,2 @@
-include ':LeonidsLib'
-include ':LeonidsExamples'
+include ':ColorfulLeonidsLib'
+include ':ColorfulLeonidsExamples'

@@ -1,17 +1,17 @@
 ## Changes in this fork:
-- Spelling fixes
+
+- Spelling fixes (!breaking changes)
 - Added static method to set FPS
 - Fixed some angle math
 
-Leonids
+Colorful Leonids
 ==========================
-[![Badge](http://www.libtastic.com/static/osbadges/277.png)](http://www.libtastic.com/technology/277/)
 
 Leonids is a particle system library that works with the standard Android UI.
 
-The library is extremely lightweight, [LeonidsLib.jar](https://github.com/plattysoft/Leonids/releases/download/1.3.2/LeonidsLib-1.3.2.jar) is just 81Kb.
+The library is extremely lightweight, [ColorfulLeonidsLib.jar] is just 81Kb.
 
-You can download [Leonids Demo from Google Play](https://play.google.com/store/apps/details?id=com.plattysoft.leonids.examples) to check out what can be done with it.
+You can download [Leonids Demo from Google Play]( -- coming soon -- ) to check out what can be done with it.
 
 ## Setup
 
@@ -22,7 +22,7 @@ Leonids is available in jcenter as well as a jar file to fit both Android Studio
 Add the following dependency to the build.gradle of your project
 ```
 dependencies {
-    compile 'com.plattysoft.leonids:LeonidsLib:1.3.2'
+    compile 'com.github.cleonids:ColorfulLeonidsLib:1.3.3'
 }
 ```
 Note: If you get an error, you may need to update the jcenter repository to:
@@ -36,7 +36,7 @@ repositories {
 
 ### Eclipse / jar file
 
-Just put [LeonidsLib.jar](https://github.com/plattysoft/Leonids/releases/download/1.3.2/LeonidsLib-1.3.2.jar) into the libs folder of your app.
+Just put [ColorfulLeonidsLib.jar](https://github.com/plattysoft/Leonids/releases/ ... ) into the libs folder of your app.
 
 ## Why this library?
 
@@ -47,6 +47,8 @@ Precisely because its main use is games, all engines have support for particle s
 This means that if you are building an Android app and you want a particle system, you have to include a graphics engine and use OpenGL -which is quite an overkill- or you have to implement it yourself.
 
 Leonids is made to fill this gap, bringing particle sytems to developers that use the standard Android UI.
+
+Colorful Leonids
 
 ## Basic usage
 
@@ -129,7 +131,7 @@ Available methods on the Particle system for configuration are:
 * _setRotationSpeed(float rotationSpeed)_
 * _setRotationSpeedRange(float minRotationSpeed, float maxRotationSpeed)_
 * _setAcceleration(float acceleration, float angle)_
-* _setFadeOut(long milisecondsBeforeEnd, Interpolator interpolator)_: Utility method for a simple fade out effect using an interpolator
+* _setFadeOut(long millisecondsBeforeEnd, Interpolator interpolator)_: Utility method for a simple fade out effect using an interpolator
 * _setFadeOut(long duration)_:Utility method for a simple fade out
 
 You can start the particle system "in the future" if you want to have the particles already created and moving using
