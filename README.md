@@ -72,7 +72,7 @@ Then you configure the particle system. In this case we specify that the particl
 
 Finally, we call oneShot, passing the view from which the particles will be launched and saying how many particles we want to be shot.
 
-![](https://raw.githubusercontent.com/plattysoft/Leonids/master/images/Leonids_one_shot.gif)
+![](https://raw.githubusercontent.com/jasonlamkk/AndroidColorfulParticleSystem/master/images/demo.)
 
 ## Emitters
 
@@ -92,10 +92,6 @@ new ParticleSystem(this, 80, R.drawable.confeti3, 10000)
 .setAcceleration(0.00005f, 90)
 .emit(findViewById(R.id.emiter_top_left), 8);
 ```
-
-It uses an initializer for the Speed as module and angle ranges, a fixed speed rotaion and extenal acceleration.
-
-![](https://raw.githubusercontent.com/plattysoft/Leonids/master/images/leonids_confeti.gif)
 
 ## Available Methods
 
@@ -126,12 +122,12 @@ And another constructor that receives a parent viewgroup and drawable for use in
 ### Configuration
 
 Available methods on the Particle system for configuration are:
-
+* _setColor(float redStart, float greenStart, float blueStart, float redStartVariance, float greenStartVariance, float blueStartVariance, float redEnd, float greenEnd, float blueEnd, float redEndVariance, float greenEndVariance, float blueEndVariance,  float startAlpha, float startVarianceAlpha, float endAlpha, float endVarianceAlpha)_: Set color filter
 * _setSpeedRange(float speedMin, float speedMax)_: Uses 0-360 as the angle range
 * _setSpeedModuleAndAngleRange(float speedMin, float speedMax, int minAngle, int maxAngle)_
 * _setSpeedByComponentsRange(float speedMinX, float speedMaxX, float speedMinY, float speedMaxY)_
 * _setInitialRotationRange (int minAngle, int maxAngle)_
-* _setScaleRange(float minScale, float maxScale)_
+* _setScaleRange(float startSize, float startSizeVariance, float endSize, float endSizeVarianceSize)_
 * _setRotationSpeed(float rotationSpeed)_
 * _setRotationSpeedRange(float minRotationSpeed, float maxRotationSpeed)_
 * _setAcceleration(float acceleration, float angle)_
