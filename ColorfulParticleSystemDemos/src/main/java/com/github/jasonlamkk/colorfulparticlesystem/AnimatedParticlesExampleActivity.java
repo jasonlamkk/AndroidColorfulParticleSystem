@@ -5,7 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
 
-import com.github.cleonids.examples.R;
+import com.github.jasonlamkk.colorfulparticlesystem.examples.R;
 import com.github.jasonlamkk.colorfulparticlesystem.ParticleSystem;
 
 public class AnimatedParticlesExampleActivity extends Activity implements OnClickListener {

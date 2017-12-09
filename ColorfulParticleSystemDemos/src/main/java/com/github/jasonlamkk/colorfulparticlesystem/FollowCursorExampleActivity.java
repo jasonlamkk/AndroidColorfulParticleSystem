@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.view.MotionEvent;
 import android.view.animation.AccelerateInterpolator;
 
-import com.github.cleonids.examples.R;
+import com.github.jasonlamkk.colorfulparticlesystem.examples.R;
 import com.github.jasonlamkk.colorfulparticlesystem.ParticleSystem;
 
 public class FollowCursorExampleActivity extends Activity  {

@@ -1,3 +1,7 @@
+# Major Different in this fork:
+- Support Color Filter
+- make a unified Particle System for crossplatform development  
+
 ## Changes in this fork:
 
 - Spelling fixes (!breaking changes)

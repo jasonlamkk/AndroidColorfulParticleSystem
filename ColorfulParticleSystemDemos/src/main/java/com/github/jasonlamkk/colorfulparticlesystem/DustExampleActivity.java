@@ -1,6 +1,6 @@
 package com.github.jasonlamkk.colorfulparticlesystem;
 
-import com.github.cleonids.examples.R;
+import com.github.jasonlamkk.colorfulparticlesystem.examples.R;
 import com.github.jasonlamkk.colorfulparticlesystem.modifiers.AlphaModifier;
 import com.github.jasonlamkk.colorfulparticlesystem.ParticleSystem;
 import com.github.jasonlamkk.colorfulparticlesystem.modifiers.ScaleModifier;
