@@ -72,7 +72,7 @@ Then you configure the particle system. In this case we specify that the particl
 
 Finally, we call oneShot, passing the view from which the particles will be launched and saying how many particles we want to be shot.
 
-![](https://raw.githubusercontent.com/jasonlamkk/AndroidColorfulParticleSystem/master/images/demo.)
+![](https://raw.githubusercontent.com/jasonlamkk/AndroidColorfulParticleSystem/master/images/demo.gif)
 
 ## Emitters
 
