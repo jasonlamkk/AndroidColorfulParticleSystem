@@ -9,3 +9,4 @@ local.properties
 !ColorfulLeonidsLib-*.jar
 !releases/*.apk
 keys/
+bintray.sh

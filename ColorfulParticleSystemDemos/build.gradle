@@ -23,7 +23,11 @@ android {
 }
 
 dependencies {
-    //download >>> 'https://github.com/jasonlamkk/AndroidColorfulParticleSystem/raw/master/releases/colorfulparticlesystem-release.aar'
-    implementation files('../releases/colorfulparticlesystem-release.aar')
-    // implementation project(':colorfulparticlesystem')
+//    start manual download
+//    //download >>> 'https://github.com/jasonlamkk/AndroidColorfulParticleSystem/raw/master/releases/colorfulparticlesystem-release.aar'
+//    implementation files('../releases/colorfulparticlesystem-release.aar')
+//    end manual download
+
+    //start recommended maven
+    compile 'com.github.jasonlamkk:colorfulparticlesystem:1.3.3'
 }

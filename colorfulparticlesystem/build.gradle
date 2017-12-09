@@ -49,8 +49,10 @@ install {
                 packaging 'aar'
 
                 // Add your description here
+                groupId group
+                version libVersion
                 name libName
-                description = projName + "(" +versionName +")" + projDesc
+                description = projName + "(" +versionName +") " + projDesc
                 url siteUrl
 
                 // Set your license
@@ -60,12 +62,14 @@ install {
                         url licenseUrl
                     }
                 }
-                developers{/*
-                    developer{
-                        id developer
-                        name developer
-                        email developerEmail
-                    }*/
+                developers{
+                    //the follow section lead to a compile bug, add the xml (build/poms/pom-default.xml) to pom manually ->
+//                    see /pom-default.bak.xml
+//                    developer {
+//                        id developer
+//                        name developer
+//                        email developerEmail
+//                    }
                 }
                 scm {
                     connection gitUrl
