@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.github.jasonlamkk.colorfulparticlesystem.examples"
+    android:versionCode="3"
+    android:versionName="1.2" >
+
+    <uses-sdk
+        android:minSdkVersion="14"
+        android:targetSdkVersion="27" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name="com.github.jasonlamkk.colorfulparticlesystem.ExampleListActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        
+        <activity android:name="com.github.jasonlamkk.colorfulparticlesystem.OneShotSimpleExampleActivity" />
+        <activity android:name="com.github.jasonlamkk.colorfulparticlesystem.FireworksExampleActivity" />
+        <activity android:name="com.github.jasonlamkk.colorfulparticlesystem.OneShotAdvancedExampleActivity" />
+        <activity android:name="com.github.jasonlamkk.colorfulparticlesystem.EmiterSimpleExampleActivity" />
+        <activity android:name="com.github.jasonlamkk.colorfulparticlesystem.EmiterBackgroundSimpleExampleActivity" />
+        <activity android:name="com.github.jasonlamkk.colorfulparticlesystem.EmiterIntermediateExampleActivity" />
+        <activity android:name="com.github.jasonlamkk.colorfulparticlesystem.EmiterTimeLimitedExampleActivity" />
+        <activity android:name="com.github.jasonlamkk.colorfulparticlesystem.AnimatedParticlesExampleActivity" />
+        <activity android:name="com.github.jasonlamkk.colorfulparticlesystem.ConfettiExampleActivity" />
+        <activity android:name="com.github.jasonlamkk.colorfulparticlesystem.DustExampleActivity" />
+        <activity android:name="com.github.jasonlamkk.colorfulparticlesystem.StarsExampleActivity" />
+        <activity android:name="com.github.jasonlamkk.colorfulparticlesystem.FollowCursorExampleActivity" />
+        <activity android:name="com.github.jasonlamkk.colorfulparticlesystem.EmiterWithGravityExampleActivity" />
+    </application>
+
+</manifest>
