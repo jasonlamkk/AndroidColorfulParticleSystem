@@ -1,4 +1,8 @@
 apply plugin: 'com.android.library'
+apply plugin: 'com.github.dcendents.android-maven'
+apply plugin: "com.jfrog.bintray"
+
+def libVersion = '1.3.3'
 
 android {
     compileSdkVersion 27
@@ -7,8 +11,110 @@ android {
     defaultConfig {
         minSdkVersion 14
         targetSdkVersion 27
+        versionCode 1003003
+        versionName libVersion
     }
 
     buildTypes {
+        release {
+            minifyEnabled true
+        }
+    }
+    //dependencies none
+}
+
+def versionName = libVersion
+def projName = 'AndroidColorfulParticleSystem'
+def projDesc = 'A Colorful Particle System Library for standard Android UI.'
+def developer = 'jasonlamkk'
+def group = 'com.github.jasonlamkk'
+def libName = group+':colorfulparticlesystem'
+def developerEmail = 'jasonlamkk@users.noreply.github.com'
+def licenseCode = 'Apache-2.0'
+def licenseName = "The Apache Software License, Version 2.0"
+def licenseUrl = "http://www.apache.org/licenses/LICENSE-2.0.txt"
+def siteUrl = 'https://github.com/jasonlamkk/AndroidColorfulParticleSystem/'
+def gitUrl = 'https://github.com/jasonlamkk/AndroidColorfulParticleSystem.git'
+
+
+install {
+    repositories.mavenInstaller {
+        // This generates POM.xml with proper parameters
+        pom {
+            project {
+                packaging 'aar'
+
+                // Add your description here
+                name libName // TODO
+                description = projName + "(" +versionName +")" + projDesc // TODO
+                url siteUrl
+
+                // Set your license
+                licenses {
+                    license {
+                        name licenseName
+                        url licenseUrl
+                    }
+                }
+//                developers {
+//                    developer {
+//                        id = 'jasonlamkk' // TODO
+//                        name developer // TODO
+//                        email developerEmail // TODO
+//                    }
+//                }
+                scm {
+                    connection gitUrl
+                    developerConnection gitUrl
+                    url siteUrl
+                }
+            }
+        }
     }
 }
+
+task sourcesJar(type: Jar) {
+    from android.sourceSets.main.java.srcDirs
+    classifier = 'sources'
+}
+
+task javadoc(type: Javadoc) {
+    source = android.sourceSets.main.java.srcDirs
+    classpath += project.files(android.getBootClasspath().join(File.pathSeparator))
+}
+
+task javadocJar(type: Jar, dependsOn: javadoc) {
+    classifier = 'javadoc'
+    from javadoc.destinationDir
+}
+artifacts {
+    archives javadocJar
+    archives sourcesJar
+}
+
+
+Properties properties = new Properties()
+properties.load(project.rootProject.file('local.properties').newDataInputStream())
+
+bintray {
+    user = properties.getProperty("bintray.user")
+    key = properties.getProperty("bintray.apikey")
+
+    configurations = ['archives']
+    pkg {
+        repo = "maven"
+        // it is the name that appears in bintray when logged
+        name = libName
+        websiteUrl = siteUrl
+        vcsUrl = gitUrl
+        licenses = ["Apache-2.0"]
+        publish = true
+        version {
+            gpg {
+                sign = true //Determines whether to GPG sign the files. The default is false
+                passphrase = properties.getProperty("bintray.gpg.password") //Optional. The passphrase for GPG signing'
+            }
+        }
+    }
+}
+
