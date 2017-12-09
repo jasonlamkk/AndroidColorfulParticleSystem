@@ -8,27 +8,34 @@
 - Added static method to set FPS
 - Fixed some angle math
 
-Colorful Leonids
+Colorful ColorfulParticleSystem
 ==========================
 
-Leonids is a particle system library that works with the standard Android UI.
+ColorfulParticleSystem is a particle system library that works with the standard Android UI.
 
-The library is extremely lightweight, [ColorfulLeonidsLib.jar] is just 81Kb.
+The library is extremely lightweight, [ColorfulColorfulParticleSystemLib.jar] is just 81Kb.
 
-You can download [Leonids Demo from Google Play]( -- coming soon -- ) to check out what can be done with it.
+You can download [Demo from Google Play]( -- coming soon -- ) to check out what can be done with it.
 
 ## Setup
 
-Leonids is available in jcenter as well as a jar file to fit both Android Studio and Eclipse.
+ColorfulParticleSystem is available in jcenter as well as a jar file to fit both Android Studio and Eclipse.
 
 ### Android Studio / gradle
 
 Add the following dependency to the build.gradle of your project
 ```
 dependencies {
-    compile 'com.github.cleonids:ColorfulLeonidsLib:1.3.3'
+    compile 'com.github.jasonlamkk:colorfulparticlesystem:1.3.3'
 }
 ```
+or 
+```
+dependencies {
+    implementation 'com.github.jasonlamkk:colorfulparticlesystem:1.3.3'
+}
+```
+
 Note: If you get an error, you may need to update the jcenter repository to:
 ```
 repositories {
@@ -40,7 +47,7 @@ repositories {
 
 ### Eclipse / jar file
 
-Just put [ColorfulLeonidsLib.jar](https://github.com/plattysoft/Leonids/releases/ ... ) into the libs folder of your app.
+Just put [ColorfulColorfulParticleSystemLib.jar](https://github.com/plattysoft/ColorfulParticleSystem/releases/ ... ) into the libs folder of your app.
 
 ## Why this library?
 
@@ -52,7 +59,9 @@ This means that if you are building an Android app and you want a particle syste
 
 Leonids is made to fill this gap, bringing particle sytems to developers that use the standard Android UI.
 
-Colorful Leonids
+Colorful Particle System take one step feather, allow using color filter to the Particle System. You can now use single image (instead of sprites) to create fancy particle effect.
+
+Next, Colorful Particle System will create a similar counterpart in other platforms so that you don't need to design twice for single effect.
 
 ## Basic usage
 
@@ -64,7 +73,7 @@ new ParticleSystem(this, numParticles, drawableResId, timeToLive)
 .oneShot(anchorView, numParticles);
 ```
 
-Note that the ParticleSystem checks the position of the anchor view when oneShot (or emit) is called, so it requires the views to be measured. This means that **ParticleSystem won't work properly if you call oneShot or emit during onCreate**. For more information check the comments on [issue #22](https://github.com/plattysoft/Leonids/issues/22).
+Note that the ParticleSystem checks the position of the anchor view when oneShot (or emit) is called, so it requires the views to be measured. This means that **ParticleSystem won't work properly if you call oneShot or emit during onCreate**. For more information check the comments on [issue #22](https://github.com/plattysoft/ColorfulParticleSystem/issues/22).
 
 When you create the particle system, you tell how many particles will it use as a maximum, the resourceId of the drawable you want to use for the particles and for how long the particles will live.
 
@@ -176,7 +185,7 @@ Emits the number of particles per second from the emitter. If emittingTime is se
 
 ## Other details
 
-Leonids requires minSDK 11 because it uses ValueAnimators. It should be very easy, however to use nineoldandroids and make it work on Gingerbread.
+ColorfulParticleSystem requires minSDK 11 because it uses ValueAnimators. It should be very easy, however to use nineoldandroids and make it work on Gingerbread.
 
 The library is Free Software, you can use it, extended with no requirement to open source your changes. You can also make paid apps using it.
 
