@@ -1,0 +1,112 @@
+apply plugin: 'maven-publish'
+apply plugin: 'com.github.dcendents.android-maven'
+apply plugin: 'com.jfrog.bintray'
+
+def libName = 'com.github:cleonids'
+def versionName = '1.3.3'
+def projName = 'AndroidColorfulParticleSystem'
+def projDesc = 'A Colorful Particle System Library for standard Android UI.'
+def developer = 'jasonlamkk'
+def developerEmail = 'jasonlamkk@users.noreply.github.com'
+def licenseCode = 'Apache-2.0'
+def licenseName = "The Apache Software License, Version 2.0"
+def licenseUrl = "http://www.apache.org/licenses/LICENSE-2.0.txt"
+def siteUrl = 'https://github.com/jasonlamkk/AndroidColorfulParticleSystem/'
+def gitUrl = 'https://github.com/jasonlamkk/AndroidColorfulParticleSystem.git'
+
+version versionName
+group 'com.github.cleonids'
+
+install {
+    repositories.mavenInstaller {
+        // This generates POM.xml with proper parameters
+        pom {
+            project {
+                packaging 'aar'
+
+                // Add your description here
+                name libName // TODO
+                description = projName + " - " +projDesc // TODO
+                url siteUrl
+
+                // Set your license
+                licenses {
+                    license {
+                        name licenseName
+                        url licenseUrl
+                    }
+                }
+                developers {
+                    developer {
+                        id developer // TODO
+                        name developer // TODO
+                        email developerEmail // TODO
+                    }
+                }
+                scm {
+                    connection gitUrl
+                    developerConnection gitUrl
+                    url siteUrl
+                }
+            }
+        }
+    }
+}
+
+publishing {
+    publications {
+        Production(MavenPublication) {
+            artifact("$buildDir/outputs/aar/"+projName+".aar")
+            groupId
+            artifactId projName
+            version this.version
+
+            pom.withXml {
+                def dependenciesNode = asNode().appendNode('dependencies')
+
+                // Iterate over the implementation dependencies (we don't want the test ones), adding a <dependency> node for each
+                configurations.implementation.allDependencies.each {
+                    // Ensure dependencies such as fileTree are not included in the pom.
+                    if (it.name != 'unspecified') {
+                        def dependencyNode = dependenciesNode.appendNode('dependency')
+                        dependencyNode.appendNode('groupId', it.group)
+                        dependencyNode.appendNode('artifactId', it.name)
+                        dependencyNode.appendNode('version', it.version)
+                    }
+                }
+            }
+        }
+    }
+}
+
+bintray {
+
+
+    def propsFile = rootProject.file('./bintray.properties')
+    def props = new Properties()
+    if (propsFile.exists()) {
+        props.load(new FileInputStream(propsFile))
+        user = props["user"]
+        key = props["key"]
+    }
+
+    publications = ['Production']
+    configurations = ['archives']
+    override = true
+    pkg {
+        repo = 'maven'
+        name = projName
+        description = projDesc
+        publish = true
+        publicDownloadNumbers = true
+        licenses = [licenseCode]
+        vcsUrl = gitUrl
+        dryRun = true
+        version {
+            name = this.version
+            desc = projName + " ${this.version}"
+            released = new Date()
+            vcsTag = this.version
+        }
+    }
+}

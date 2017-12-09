@@ -1,2 +1,2 @@
-include ':ColorfulLeonidsLib'
-include ':ColorfulLeonidsExamples'
+include ':colorfulparticlesystem'
+include ':ColorfulParticleSystemDemos'
